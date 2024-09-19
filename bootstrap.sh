@@ -85,3 +85,6 @@ cp ./config/git/gitconfig_personal ~/projects/.gitconfig_personal
 
 ### neovim config
 cp ./config/nvim/init.lua ~/.config/nvim/
+
+### mac specific
+defaults write -g ApplePressAndHoldEnabled -bool false
