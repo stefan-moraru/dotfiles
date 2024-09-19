@@ -1,0 +1,6 @@
+[user]
+	name = Stefan Moraru
+	email = stefan@stefanmoraru.ro
+
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa

@@ -1,0 +1,30 @@
+[init]
+	defaultBranch = main
+
+[diff]
+	ignoreSubmodules = all
+	colorMoved = default
+
+[pull]
+	rebase = false
+
+[push]
+	autoSetupRemote = true
+
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+
+[merge]
+	conflictstyle = diff3
+
+[user]
+	name = Stefan Moraru
+	email = stefan@stefanmoraru.ro
