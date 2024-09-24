@@ -22,6 +22,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
+vim.opt.statusline = " %f"
+
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
@@ -257,6 +259,7 @@ require("lazy").setup({
 				css = { "prettierd", "prettier" },
 				typescript = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
+				astro = { "prettierd", "prettier" },
 			},
 		},
 	},
@@ -319,18 +322,7 @@ require("lazy").setup({
 		init = function()
 			vim.cmd.colorscheme("tokyonight-night")
 			vim.cmd.hi("Comment gui=none")
-		end,
-	},
-	{ -- Collection of various small independent plugins/modules
-		"echasnovski/mini.nvim",
-		config = function()
-			require("mini.ai").setup({ n_lines = 500 })
-			require("mini.surround").setup()
-			local statusline = require("mini.statusline")
-			statusline.setup({ use_icons = vim.g.have_nerd_font })
-			statusline.section_location = function()
-				return "%2l:%-2v"
-			end
+			vim.api.nvim_set_hl(0, "StatusLine", { bg = "#292e42", fg = "white" })
 		end,
 	},
 	{ -- Highlight, edit, and navigate code
@@ -363,23 +355,5 @@ require("lazy").setup({
 				},
 			})
 		end,
-	},
-}, {
-	ui = {
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
 	},
 })
