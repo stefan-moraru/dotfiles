@@ -322,7 +322,9 @@ require("lazy").setup({
 		init = function()
 			vim.cmd.colorscheme("tokyonight-night")
 			vim.cmd.hi("Comment gui=none")
-			vim.api.nvim_set_hl(0, "StatusLine", { bg = "#292e42", fg = "white" })
+			vim.api.nvim_set_hl(0, "StatusLine", { fg = "white", bg = "#292e42" })
+			vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#7080a0" })
+			vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#7080a0" })
 		end,
 	},
 	{ -- Highlight, edit, and navigate code
