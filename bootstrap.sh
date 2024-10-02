@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+## Manual part
 echo "You need to manually install:"
 
 echo "iterm2: https://iterm2.com/downloads.html (Note: You also need to manually install the tokyo-nights theme)"
@@ -9,6 +10,11 @@ echo "Docker Desktop: https://www.docker.com/products/docker-desktop/"
 echo "Arc: https://arc.net/"
 
 read -p "Did you install the packages above? [y/n] " RESP
+
+### Manual mac settings
+echo "Settings -> Trackpad -> Enable Tap to click"
+echo "Settings -> Trackpad -> Secondary click = Click in Bottom Right Corner"
+echo "Settings -> Trackpad -> Disable Natural scrolling"
 
 if [ "$RESP" = "y" ]; then
 	echo "Great! Starting setup.."
@@ -30,6 +36,8 @@ echo "Installing system tools.."
 
 ### brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew update
 
 ### zsh
 brew install zsh
