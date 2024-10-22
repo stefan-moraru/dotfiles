@@ -22,7 +22,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 
-vim.opt.statusline = " %f"
+vim.opt.statusline = " %f %m"
 
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -260,6 +260,7 @@ require("lazy").setup({
 				typescript = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
 				astro = { "prettierd", "prettier" },
+				json = { "prettierd", "prettier" },
 			},
 		},
 	},
