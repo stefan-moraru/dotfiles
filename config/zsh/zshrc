@@ -31,6 +31,7 @@ export BAT_THEME="tokyonight_night"
 alias ll="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --all"
 alias vim="nvim"
 alias vi="nvim"
+alias gs="git status"
 
 eval "$(zoxide init zsh)"
 
