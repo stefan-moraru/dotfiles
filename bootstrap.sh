@@ -11,10 +11,14 @@ echo "Arc: https://arc.net/"
 
 read -p "Did you install the packages above? [y/n] " RESP
 
-### Manual mac settings
-echo "Settings -> Trackpad -> Enable Tap to click"
-echo "Settings -> Trackpad -> Secondary click = Click in Bottom Right Corner"
-echo "Settings -> Trackpad -> Disable Natural scrolling"
+### Manual settings
+echo "[macos] Settings -> Appearance -> Dark mode"
+echo "[macos] Settings -> Trackpad -> Enable Tap to click"
+echo "[macos] Settings -> Trackpad -> Secondary click = Click in Bottom Right Corner"
+echo "[macos] Settings -> Trackpad -> Disable Natural scrolling"
+
+echo "[iterm] Settings -> Profiles -> General -> Enable Reuse previous session's directory"
+echo "[iterm] Settings -> General -> Closing -> Disable Confirm 'Quit' iTerm2"
 
 if [ "$RESP" = "y" ]; then
 	echo "Great! Starting setup.."
@@ -39,14 +43,11 @@ echo "Installing system tools.."
 
 brew update
 
-### zsh
-brew install zsh
+### packages
+brew install zsh neovim font-hack-nerd-font eza bat zoxide fzf git-delta ripgrep watch
 
 ### oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-### neovim
-brew install neovim
 
 ## Developer tools
 echo "Installing developer tools.."
@@ -61,14 +62,6 @@ nvm install node
 
 ### pnpm
 corepack enable pnpm
-
-### packages
-brew install font-hack-nerd-font
-brew install eza
-brew install bat
-brew install zoxide
-brew install fzf
-brew install git-delta
 
 ## Configs
 echo "Installing custom configs.."
