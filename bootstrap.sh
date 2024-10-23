@@ -44,35 +44,22 @@ echo "Installing system tools.."
 brew update
 
 ### packages
-brew install zsh neovim font-hack-nerd-font eza bat zoxide fzf git-delta ripgrep watch
-
-### oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install zsh neovim font-hack-nerd-font eza bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n
 
 ## Developer tools
 echo "Installing developer tools.."
 
-### nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-
 ### latest note
-source ~/.zshrc
+n lts
 
-nvm install node
+### reload zsh
+source ~/.zshrc
 
 ### pnpm
 corepack enable pnpm
 
 ## Configs
 echo "Installing custom configs.."
-
-### zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-### zsh powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-cp ./config/zsh/p10k.zsh ~/.p10k.zsh
 
 ### bat theme
 cp ./config/bat/tokyonight_night.tmTheme ~/.config/bat/themes/
