@@ -11,8 +11,6 @@ The following will be installed:
     - [Arc](https://arc.net/)
     - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - zsh
-    - oh-my-zsh
-    - powerlevel10k
 - neovim
     - based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
     - gitsigns
