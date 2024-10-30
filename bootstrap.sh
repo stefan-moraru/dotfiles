@@ -44,7 +44,7 @@ echo "Installing system tools.."
 brew update
 
 ### packages
-brew install zsh neovim font-hack-nerd-font eza bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n
+brew install zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq
 
 ## Developer tools
 echo "Installing developer tools.."
