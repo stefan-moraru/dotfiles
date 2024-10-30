@@ -1,13 +1,27 @@
+# Prompt setup
 function git_domain()
 {
   if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
-    echo "($(git config user.email | grep -o '@[^.]*' | cut -c 2-)) ($(git symbolic-ref --short HEAD)) "
+      local email=$(git config user.email)
+      local domain=${${email#*@}%%.*}
+      local branch=$(git symbolic-ref --short HEAD)
+
+      echo "($domain) ($branch)"
   fi
 }
 
 setopt prompt_subst
 
 PROMPT='%B%F{cyan}%~ %f%b%F{green}$(git_domain)%f$ '
+
+# zsh setup
+export HISTSIZE=50000
+export SAVEHIST=$HISTSIZE
+setopt share_history
+
+# Variables
+export BAT_THEME="tokyonight_night"
+export CLICOLOR=1
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="./node_modules/.bin/:$PATH"
@@ -18,17 +32,19 @@ export PATH="$PNPM_HOME:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-export BAT_THEME="tokyonight_night"
+export PATH="$PATH:$HOME/.rvm/bin"
 
-alias ll="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions --all"
+# Aliases
 alias vim="nvim"
 alias vi="nvim"
 
-alias ga='git add'
-alias gd='git diff'
-alias gs='git status'
-alias gpr='git pull --rebase'
+alias ga="git add"
+alias gd="git diff"
+alias gs="git status"
+alias gpr="git pull --rebase"
 
+# Plugins
 eval "$(zoxide init zsh)"
 
+source ~/.zsh_exports
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
