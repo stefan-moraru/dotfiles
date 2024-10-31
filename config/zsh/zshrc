@@ -6,13 +6,13 @@ function git_domain()
       local domain=${${email#*@}%%.*}
       local branch=$(git symbolic-ref --short HEAD)
 
-      echo "($domain) ($branch)"
+      echo " ($domain) ($branch)"
   fi
 }
 
 setopt prompt_subst
 
-PROMPT='%B%F{cyan}%~ %f%b%F{green}$(git_domain)%f$ '
+PROMPT='%B%F{cyan}%~%f%b%F{green}$(git_domain)%f $ '
 
 # zsh setup
 export HISTSIZE=50000
