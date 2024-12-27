@@ -3,8 +3,6 @@
 ## Manual part
 echo "You need to manually install:"
 
-echo "iterm2: https://iterm2.com/downloads.html (Note: You also need to manually install the tokyo-nights theme)"
-
 echo "Docker Desktop: https://www.docker.com/products/docker-desktop/"
 
 echo "Arc: https://arc.net/"
@@ -17,8 +15,8 @@ echo "[macos] Settings -> Trackpad -> Enable Tap to click"
 echo "[macos] Settings -> Trackpad -> Secondary click = Click in Bottom Right Corner"
 echo "[macos] Settings -> Trackpad -> Disable Natural scrolling"
 
-echo "[iterm] Settings -> Profiles -> General -> Enable Reuse previous session's directory"
-echo "[iterm] Settings -> General -> Closing -> Disable Confirm 'Quit' iTerm2"
+echo "[arc] Settings -> Shortcuts -> Remove 'New Window' shortcut"
+echo "[arc] Settings -> Shortcuts -> Remove 'New Little Arc Window' shortcut"
 
 if [ "$RESP" = "y" ]; then
 	echo "Great! Starting setup.."
@@ -44,7 +42,7 @@ echo "Installing system tools.."
 brew update
 
 ### packages
-brew install zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq
+brew install ghostty zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq eza
 
 ## Developer tools
 echo "Installing developer tools.."

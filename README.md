@@ -7,7 +7,7 @@ Sensible and easily replicable setup for a macbook.
 The following will be installed:
 
 - apps
-    - [iTerm2](https://iterm2.com/)
+    - [ghostty](https://ghostty.org/)
     - [Arc](https://arc.net/)
     - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - zsh
@@ -35,7 +35,7 @@ chmod +x ./bootstrap.sh
 ./bootstrap.sh
 ```
 
-_Note: You need to manually install iTerm2, Arc and Docker Desktop_
+_Note: You need to manually install Arc and Docker Desktop_
 
 TODO:
 - [ ] Unify git configs in ~/.gitconfigs/...
