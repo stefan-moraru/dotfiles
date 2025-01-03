@@ -30,7 +30,6 @@ echo "Creating folders.."
 
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/nvim
-mkdir -p ~/.config/bat/themes
 mkdir -p ~/projects/personal
 
 ## System tools
@@ -58,11 +57,6 @@ corepack enable pnpm
 
 ## Configs
 echo "Installing custom configs.."
-
-### bat theme
-cp ./config/bat/tokyonight_night.tmTheme ~/.config/bat/themes/
-
-bat cache --build
 
 ### .zshrc
 cp ./config/zsh/zshrc ~/.zshrc

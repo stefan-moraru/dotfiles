@@ -20,7 +20,6 @@ export SAVEHIST=$HISTSIZE
 setopt share_history
 
 # Variables
-export BAT_THEME="tokyonight_night"
 export CLICOLOR=1
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
