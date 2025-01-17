@@ -22,8 +22,7 @@ fi
 ## Necessary paths
 echo "Creating folders.."
 
-mkdir -p ~/.config/zsh
-mkdir -p ~/.config/nvim
+mkdir -p ~/.config/{zsh,nvim,ghostty}
 mkdir -p ~/projects/personal
 
 ## System tools
@@ -40,11 +39,13 @@ brew install ghostty zsh neovim font-hack-nerd-font bat zoxide fzf git-delta rip
 ## Developer tools
 echo "Installing developer tools.."
 
+### .zshrc
+cp ./config/zsh/zshrc ~/.zshrc
+
+source ~/.zshrc
+
 ### latest note
 n lts
-
-### reload zsh
-source ~/.zshrc
 
 ### pnpm
 corepack enable pnpm
@@ -52,15 +53,18 @@ corepack enable pnpm
 ## Configs
 echo "Installing custom configs.."
 
-### .zshrc
-cp ./config/zsh/zshrc ~/.zshrc
+### SSH key
+ssh-keygen -t ed25519 -C "email"
 
 ### git configs
 cp ./config/git/gitconfig ~/.gitconfig
 cp ./config/git/gitconfig_personal ~/projects/.gitconfig_personal
 
 ### neovim config
-cp ./config/nvim/init.lua ~/.config/nvim/
+cp ./config/nvim/init.lua ~/.config/nvim/init.lua
+
+### ghostty config
+cp ./config/ghostty/config ~/.config/ghostty/config
 
 ### mac specific
 
