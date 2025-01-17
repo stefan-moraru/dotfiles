@@ -33,6 +33,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin"
 
+export N_PREFIX="/opt/homebrew"
+
 # Aliases
 alias vim="nvim"
 alias vi="nvim"
