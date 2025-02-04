@@ -10,6 +10,21 @@ function git_domain()
   fi
 }
 
+function dotfiles_sync()
+{
+  cd ~/.config/nvim
+  mv init.lua "init.lua.$(date +%s).backup"
+  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/nvim/init.lua" -O "init.lua"
+
+  cd ~
+  mv .zshrc ".zshrc.$(date +%s).backup"
+  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/zsh/zshrc" -O ".zshrc"
+
+  cd ~/.config/ghostty
+  mv config "config.$(date +%s).backup"
+  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/ghostty/config" -O "config"
+}
+
 setopt prompt_subst
 
 PROMPT='%B%F{cyan}%~%f%b%F{green}$(git_domain)%f $ '
