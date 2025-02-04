@@ -5,12 +5,22 @@ echo "You need to manually install:"
 
 echo "Docker Desktop: https://www.docker.com/products/docker-desktop/"
 echo "Arc: https://arc.net/"
+echo "Raycast: https://www.raycast.com/"
 
 read -p "Did you install the packages above? [y/n] " RESP
 
 ### Manual settings
 echo "[arc] Settings -> Shortcuts -> Remove 'New Window' shortcut"
 echo "[arc] Settings -> Shortcuts -> Remove 'New Little Arc Window' shortcut"
+
+echo "[macos] System Preferences -> Keyboard -> Shortcuts -> Show Spotlight search -> Disable"
+echo "[raycast] Raycast Settings -> General -> Raycast Hotkey -> cmd + space"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Arc -> alt + a"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Ghostty -> alt + g"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Notes -> alt + n"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Slack -> alt + s"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Spotify -> alt + y"
+echo "[raycast] Raycast Settings -> Extensions -> Applications -> Teams -> alt + t"
 
 if [ "$RESP" = "y" ]; then
 	echo "Great! Starting setup.."

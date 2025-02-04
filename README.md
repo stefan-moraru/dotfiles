@@ -10,6 +10,7 @@ The following will be installed:
     - [ghostty](https://ghostty.org/)
     - [Arc](https://arc.net/)
     - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+    - [Raycast](https://raycast.com)
 - zsh
 - neovim
     - based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
@@ -35,7 +36,7 @@ chmod +x ./bootstrap.sh
 ./bootstrap.sh
 ```
 
-_Note: You need to manually install Arc and Docker Desktop_
+_Note: You need to manually install Arc, Docker Desktop and Raycast_
 
 TODO:
 - [ ] Unify git configs in ~/.gitconfigs/...
