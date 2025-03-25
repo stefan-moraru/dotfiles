@@ -9,6 +9,8 @@ The following will be installed:
 - apps
     - [ghostty](https://ghostty.org/)
     - [Arc](https://arc.net/)
+        - [React Developer Tools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+        - [Apollo Client Devtools](https://chromewebstore.google.com/detail/apollo-client-devtools/jdkknkkbebbapilgoeccciglkfbmbnfm)
     - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
     - [Raycast](https://raycast.com)
 - zsh
@@ -38,9 +40,11 @@ chmod +x ./bootstrap.sh
 
 _Note: You need to manually install Arc, Docker Desktop and Raycast_
 
-TODO:
-- [ ] Unify git configs in ~/.gitconfigs/...
-- [ ] Fetch theme files directly from github repos instead of having them as files
-- [ ] Clean nvim config (remove unused parts)
-- [ ] List needed Arc extensions
+### nvim config variables Further vim customisation
 
+- Enable / disable formatting files on save - `DOTFILES_NVIM_PLUGINS_CONFORM_FORMAT_ON_SAVE`
+
+TODO:
+- [ ] Improve telescope file search (FileName.tsx -> /src/.../...)
+- [ ] Unify git configs in ~/.gitconfigs/...
+- [ ] Clean nvim config (remove unused parts)

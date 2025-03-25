@@ -1,3 +1,5 @@
+DOTFILES_NVIM_PLUGINS_CONFORM_FORMAT_ON_SAVE = os.getenv("DOTFILES_NVIM_PLUGINS_CONFORM_FORMAT_ON_SAVE")
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
@@ -245,11 +247,16 @@ require("lazy").setup({
 		opts = {
 			notify_on_error = false,
 			format_on_save = function(bufnr)
-				local disable_filetypes = { c = true, cpp = true }
-				return {
-					timeout_ms = 3000,
-					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
-				}
+				if DOTFILES_NVIM_PLUGINS_CONFORM_FORMAT_ON_SAVE ~= "false" then
+					local disable_filetypes = { c = true, cpp = true }
+
+					return {
+						timeout_ms = 3000,
+						lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
+					}
+				end
+
+				return nil
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
