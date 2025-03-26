@@ -102,6 +102,19 @@ require("lazy").setup({
 		},
 		config = function()
 			require("telescope").setup({
+				defaults = {
+					dynamic_preview_title = true,
+					path_display = function(opts, path)
+						local tail = require("telescope.utils").path_tail(path)
+						local filePath = path:sub(1, #path - #tail - 1)
+
+						if tail == filePath then
+							return tail
+						end
+
+						return string.format("%s (%s)", tail, filePath)
+					end,
+				},
 				pickers = {
 					colorscheme = {
 						enable_preview = true,
