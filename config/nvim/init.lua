@@ -38,6 +38,12 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<leader>ff", "<cmd>Explore<CR>")
+vim.keymap.set("n", "<leader>fv", "<cmd>Vexplore!<CR>")
+
+if vim.fn.getenv("TERM_PROGRAM") == "ghostty" then
+	vim.opt.title = true
+	vim.opt.titlestring = "%{fnamemodify(getcwd(), ':p')}"
+end
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "*",
@@ -251,7 +257,7 @@ require("lazy").setup({
 		lazy = false,
 		keys = {
 			{
-				"<leader>f",
+				"<leader>p",
 				function()
 					require("conform").format({ async = true, lsp_fallback = true })
 				end,
