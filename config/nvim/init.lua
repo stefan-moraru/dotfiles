@@ -3,6 +3,8 @@ DOTFILES_NVIM_PLUGINS_CONFORM_FORMAT_ON_SAVE = os.getenv("DOTFILES_NVIM_PLUGINS_
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
+vim.g.netrw_banner = 0
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
