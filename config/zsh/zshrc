@@ -11,6 +11,8 @@ function git_domain()
 
 function dotfiles_sync()
 {
+  CURRENT_DIRECTORY=$(pwd)
+
   cd ~/.config/nvim
   mv init.lua "init.lua.$(date +%s).backup"
   wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/nvim/init.lua" -O "init.lua"
@@ -23,8 +25,9 @@ function dotfiles_sync()
   mv config "config.$(date +%s).backup"
   wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/ghostty/config" -O "config"
 
-  cd ~
-  source ./zshrc
+  source ~/.zshrc
+
+  cd $CURRENT_DIRECTORY
 }
 
 setopt prompt_subst
@@ -61,6 +64,7 @@ alias gd="git diff"
 alias gs="git status"
 alias gsf="git status -uno"
 alias gpr="git pull --rebase"
+alias gc="git checkout"
 
 # Plugins
 eval "$(zoxide init zsh)"
