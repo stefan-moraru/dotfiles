@@ -3,9 +3,10 @@
 ## Manual part
 echo "You need to manually install:"
 
-echo "Docker Desktop: https://www.docker.com/products/docker-desktop/"
+echo "Ghostty: https://ghostty.org/"
 echo "Arc: https://arc.net/"
 echo "Raycast: https://www.raycast.com/"
+echo "Docker Desktop: https://www.docker.com/products/docker-desktop/"
 
 read -p "Did you install the packages above? [y/n] " RESP
 
@@ -45,13 +46,20 @@ echo "Installing system tools.."
 brew update
 
 ### packages
-brew install ghostty zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq eza
+brew install git zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq eza mkcert nss
 
 ## Developer tools
 echo "Installing developer tools.."
 
+cd ~/projects/personal
+
+git clone https://github.com/stefan-moraru/dotfiles.git
+
+cd ./dotfiles
+
 ### .zshrc
 cp ./config/zsh/zshrc ~/.zshrc
+touch ~/.zsh_exports
 
 source ~/.zshrc
 
