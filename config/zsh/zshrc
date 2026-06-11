@@ -55,6 +55,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export N_PREFIX="/opt/homebrew"
 
+export EDITOR="nvim"
+
 # Aliases
 alias vim="nvim"
 alias vi="nvim"
@@ -65,6 +67,8 @@ alias gs="git status"
 alias gsf="git status -uno"
 alias gpr="git pull --rebase"
 alias gc="git checkout"
+
+alias awake="caffeinate -dims"
 
 # Plugins
 eval "$(zoxide init zsh)"

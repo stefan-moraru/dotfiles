@@ -46,7 +46,7 @@ echo "Installing system tools.."
 brew update
 
 ### packages
-brew install git zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq eza mkcert nss
+brew install git zsh neovim font-hack-nerd-font bat zoxide fzf git-delta ripgrep watch zsh-autosuggestions n jq eza mkcert nss fd gh
 
 ## Developer tools
 echo "Installing developer tools.."
@@ -132,3 +132,17 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder FXPreferredViewStyle Nlsv
 defaults write com.apple.finder QuitMenuItem -bool true
+
+#### Dock size
+defaults write com.apple.dock tilesize -int 43
+defaults write com.apple.dock magnification -bool false
+
+#### Disable hot corners
+defaults write com.apple.dock wvous-tl-corner -int 0
+defaults write com.apple.dock wvous-tr-corner -int 0
+defaults write com.apple.dock wvous-bl-corner -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0

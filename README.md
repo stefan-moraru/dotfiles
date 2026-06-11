@@ -27,6 +27,7 @@ The following will be installed:
     - [zoxide](https://github.com/ajeetdsouza/zoxide) (better `cd`)
     - [fzf](https://github.com/junegunn/fzf)
     - [git-delta](https://github.com/dandavison/delta) (better `git diff`)
+    - [fd](https://github.com/sharkdp/fd) (better `find`)
 
 ### Getting started
 
