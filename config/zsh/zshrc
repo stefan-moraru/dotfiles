@@ -15,15 +15,15 @@ function dotfiles_sync()
 
   cd ~/.config/nvim
   mv init.lua "init.lua.$(date +%s).backup"
-  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/nvim/init.lua" -O "init.lua"
+  curl "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/nvim/init.lua" -o "init.lua"
 
   cd ~
   mv .zshrc ".zshrc.$(date +%s).backup"
-  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/zsh/zshrc" -O ".zshrc"
+  curl "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/zsh/zshrc" -o ".zshrc"
 
   cd ~/.config/ghostty
   mv config "config.$(date +%s).backup"
-  wget "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/ghostty/config" -O "config"
+  curl "https://raw.githubusercontent.com/stefan-moraru/dotfiles/refs/heads/main/config/ghostty/config" -o "config"
 
   source ~/.zshrc
 
